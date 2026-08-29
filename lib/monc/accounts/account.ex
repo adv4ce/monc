@@ -1,4 +1,4 @@
-defmodule Monc.Schemas.Account do
+defmodule Monc.Accounts.Account do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -7,7 +7,7 @@ defmodule Monc.Schemas.Account do
 
   schema "monc_accounts" do
     field :currency, :string
-    field :allow_negative, :boolean, default: true
+    field :allow_negative, :boolean, default: false
 
     timestamps(type: :utc_datetime_usec)
   end

@@ -1,4 +1,4 @@
-defmodule Monc.Schemas.Posting do
+defmodule Monc.Ledger.Posting do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -8,8 +8,8 @@ defmodule Monc.Schemas.Posting do
   schema "monc_postings" do
     field :amount, :integer
 
-    belongs_to :transaction, Monc.Schemas.Transaction
-    belongs_to :account, Monc.Schemas.Account
+    belongs_to :transaction, Monc.Ledger.Transaction
+    belongs_to :account, Monc.Accounts.Account
 
     timestamps(type: :utc_datetime_usec)
   end
