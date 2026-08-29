@@ -8,4 +8,7 @@ config :monc, Monc.Repo,
   password: System.fetch_env!("POSTGRES_PASSWORD"),
   hostname: System.fetch_env!("POSTGRES_HOST"),
   port: System.fetch_env!("POSTGRES_PORT"),
+  pool_size: 30,
+  queue_target: 1000,
+  queue_interval: 5000,
   pool: if(Config.config_env() == :test, do: Ecto.Adapters.SQL.Sandbox, else: DBConnection.ConnectionPool)
