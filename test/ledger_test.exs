@@ -17,14 +17,7 @@ defmodule LedgerTest do
     alice_account: alice_account,
     bob_account: bob_account}
   end
-
-  """
-  %{
-    system_account: system_account,
-    alice_account: alice_account,
-    bob_account: bob_account
-  }
-  """
+  
   describe "get_balance/1" do
     test "get new account balance", %{
       alice_account: alice_account
