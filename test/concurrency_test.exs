@@ -28,7 +28,13 @@ defmodule ConcurrencyTest do
     transactions_count = 10_000
 
     {:ok, system_account} = Accounts.create_account(%{currency: "USD", allow_negative: true})
-    {:ok, system_account: system_account, test_mode: test_mode, accounts_count: accounts_count, balance_amount: balance_amount, transactions_count: transactions_count}
+    {:ok, %{
+      system_account: system_account,
+      test_mode: test_mode,
+      accounts_count: accounts_count,
+      balance_amount: balance_amount,
+      transactions_count: transactions_count
+    }}
   end
 
   @tag timeout: :infinity
